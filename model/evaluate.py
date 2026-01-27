@@ -4,7 +4,7 @@ from sklearn.metrics import (
         confusion_matrix,classification_report
 )
 
-def evaluate_model(model, X_test, y_test):
+def fetch_metrics(model, X_test, y_test):
     y_pred = model.predict(X_test)
     y_prob = model.predict_proba(X_test)[:, 1]
 
