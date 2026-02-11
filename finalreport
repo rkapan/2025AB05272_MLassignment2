@@ -1,0 +1,123 @@
+Here is the complete Markdown template for your final PDF submission. You can copy this into a Markdown editor (like VS Code or Dillinger.io) and export it as a PDF.
+
+---
+
+# ML Assignment 2 Submission: M.Tech (AIML/DSE)
+
+**Student Name:** [Your Name]
+
+**BITS ID:** [Your ID Number]
+
+**Submission Date:** [Current Date]
+
+---
+
+## 1. Mandatory Submission Links
+
+* 
+**GitHub Repository Link:** [Paste Clickable Link Here] 
+
+
+* 
+**Live Streamlit App Link:** [Paste Clickable Link Here] 
+
+
+
+---
+
+## 2. BITS Virtual Lab Execution Screenshot
+
+The screenshot below serves as proof that the assignment was performed on the BITS Virtual Lab.
+
+> **[INSERT SCREENSHOT HERE]**
+
+---
+
+## 3. GitHub README Documentation
+
+The following content is also included in the repository README.md.
+
+### a. Problem Statement
+
+[Insert 1-2 sentences describing your classification problem (e.g., "Predicting if a bank customer will subscribe to a term deposit based on demographic and marketing data")]. 
+
+### b. Dataset Description
+
+* 
+**Source:** [Kaggle/UCI Name] 
+
+
+* 
+**Instance Size:** [Insert number, must be ≥ 500] 
+
+
+* 
+**Feature Size:** [Insert number, must be ≥ 12] 
+
+
+* 
+**Task Type:** [Binary or Multi-class] Classification 
+
+
+
+### c. Models and Evaluation Metrics Comparison
+
+All 6 models were implemented on the same dataset.
+
+| ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
+| --- | --- | --- | --- | --- | --- | --- |
+| <br>**Logistic Regression** 
+
+ |  |  |  |  |  |  |
+| <br>**Decision Tree** 
+
+ |  |  |  |  |  |  |
+| <br>**kNN** 
+
+ |  |  |  |  |  |  |
+| <br>**Naive Bayes** 
+
+ |  |  |  |  |  |  |
+| <br>**Random Forest** 
+
+ |  |  |  |  |  |  |
+| <br>**XGBoost** 
+
+ |  |  |  |  |  |  |
+
+### d. Performance Observations
+
+
+
+| ML Model Name | Observation about model performance |
+| --- | --- |
+| **Logistic Regression** | Often serves as a stable baseline for linear relationships. |
+| **Decision Tree** | Highly interpretable but susceptible to overfitting if not pruned. |
+| **KNN** | Performance depends on optimal K selection and feature scaling. |
+| **Naive Bayes** | Efficient and fast, though assumes feature independence. |
+| **Random Forest** | Strong ensemble performance, significantly reducing variance. |
+| **XGBoost** | High predictive power and handles non-linearities exceptionally well. |
+
+---
+
+## 4. Final Submission Checklist
+
+* [ ] GitHub repository contains `app.py`, `requirements.txt`, and saved models.
+
+
+* [ ] Live Streamlit app is deployed and interactive.
+
+
+* [ ] App includes CSV upload for test data.
+
+
+* [ ] App displays Evaluation Metrics, Confusion Matrix, and Classification Report.
+
+
+* [ ] GitHub commit history reflects original development.
+
+
+
+---
+
+**Would you like me to generate the `requirements.txt` file content based on the libraries you've used in your app?**

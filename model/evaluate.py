@@ -9,12 +9,12 @@ def fetch_metrics(model, X_test, y_test):
     y_prob = model.predict_proba(X_test)[:, 1]
 
     metrics = {
-        "Accuracy": accuracy_score(y_test, y_pred),
-        "AUC": roc_auc_score(y_test, y_prob),
-        "Precision": precision_score(y_test, y_pred),
-        "Recall": recall_score(y_test, y_pred),
-        "F1": f1_score(y_test, y_pred),
-        "MCC": matthews_corrcoef(y_test, y_pred)
+        "Accuracy": round(accuracy_score(y_test, y_pred), 2),
+        "AUC": round(roc_auc_score(y_test, y_prob), 2),
+        "Precision": round(precision_score(y_test, y_pred), 2),
+        "Recall": round(recall_score(y_test, y_pred), 2),
+        "F1": round(f1_score(y_test, y_pred), 2),
+        "MCC": round(matthews_corrcoef(y_test, y_pred), 2)
     }
 
     return metrics
