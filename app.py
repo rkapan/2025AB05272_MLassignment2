@@ -191,7 +191,7 @@ with st.sidebar:
         "Random Forest": "random_forest",
         "XGBoost": "xgboost"
     }
-    st.markdown("### 2. Model Configuration")
+    st.markdown("### Model Configuration")
     model_names = st.multiselect(
         "Select Model(s) to Evaluate", 
         list(model_dict.keys()), 
