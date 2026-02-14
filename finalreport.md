@@ -23,9 +23,7 @@
 
 ## 2. BITS Virtual Lab Execution Screenshot
 
-The screenshot below serves as proof that the assignment was performed on the BITS Virtual Lab.
-
-> **[INSERT SCREENSHOT HERE]**
+![alt text](image-2.png)
 
 ---
 
@@ -36,11 +34,38 @@ The following content is also included in the repository README.md.
 
 ## a. Problem Statement
 
-The objective of this assignment is to build and evaluate multiple machine learning models to solve a classification problem using a given dataset. The goal is to compare the performance of different algorithms and select the most suitable model based on various evaluation metrics.
+The objective of this assignment is to develop a robust predictive model for a Bank Telemarketing campaign. The goal is to classify whether a client will subscribe to a term deposit (Target: yes/no) based on various demographic and behavioral attributes. This project involves building, styling, and deploying a Streamlit-based evaluation dashboard to compare six distinct machine learning algorithms—Logistic Regression, Decision Tree, KNN, Naive Bayes, Random Forest, and XGBoost—and identifying the best model using metrics suited for imbalanced data, such as the Matthews Correlation Coefficient (MCC).
 
 ## b. Dataset Description
 
-The dataset used in this assignment contains labeled instances for a binary classification task. Each row represents a sample with several features and a target label. The dataset is∏ preprocessed to handle missing values, encode categorical variables, and normalize numerical features as required.
+The dataset used in this assignment is the **Bank Marketing Dataset**, which contains information regarding direct marketing campaigns (phone calls) of a Portuguese banking institution. The task is to predict whether a client will subscribe to a term deposit (binary classification).
+
+### 1. Data Composition
+
+* **Instance Count**: Each row represents a specific client interaction during a marketing campaign.
+* **Target Variable**: The target label is binary (`y`), indicating whether the client subscribed to a term deposit ("yes" or "no").
+* **Feature Categories**:
+* **Bank Client Data**: Includes attributes such as age, job type, marital status, education level, and current balance.
+* **Loan Status**: Indicators for existing housing loans, personal loans, or credit defaults.
+* **Campaign Data**: Information regarding the contact method, day, and month of the last contact.
+
+
+
+### 2. Preprocessing Pipeline
+
+To ensure the models were trained and evaluated effectively, the following preprocessing steps were implemented:
+
+* **Separator Handling**: The raw CSV data utilizes a semicolon (`;`) as a separator, which is handled during the data loading phase to ensure correct dataframe construction.
+* **Categorical Encoding**: Non-numerical features (such as `job` or `education`) are converted into numerical formats suitable for machine learning algorithms.
+* **Feature Scaling**: Numerical features are normalized using **Standard Scaling**. This ensures that features with larger ranges do not dominate the distance-based models like KNN and Logistic Regression.
+* **Persistence**: A pre-trained `scaler.pkl` object is utilized to ensure that the test data is transformed using the exact same parameters (mean and variance) as the training set.
+
+### 3. Class Distribution
+
+* **Imbalance**: The dataset exhibits a significant class imbalance, with a majority of clients not subscribing to the term deposit.
+* **Evaluation Strategy**: Due to this imbalance, the project prioritizes **MCC (Matthews Correlation Coefficient)** and **F1-Score** over simple Accuracy to accurately assess model performance.
+
+
 
 ## c. Models Used
 ∏
