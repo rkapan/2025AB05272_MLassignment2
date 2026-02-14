@@ -68,19 +68,22 @@ The following machine learning models were implemented and evaluated:
 
 
 ### Observations on Model Performance
-| ML Model                | Observation about Model Performance                                                         |
-|-------------------------|--------------------------------------------------------------------------------------------|
-| Logistic Regression     | Provided a strong baseline with balanced precision and recall after feature scaling.        |
-| Decision Tree           | Captured non-linear relationships but showed signs of overfitting.                         |
-| KNN                     | Performance was sensitive to feature scaling and value of K.                               |
-| Naive Bayes             | Fast and efficient but limited by feature independence assumptions.                        |
-| Random Forest (Ensemble)| Improved generalization by reducing overfitting through ensemble learning.                 |
-| XGBoost (Ensemble)      | Achieved the best overall performance due to gradient boosting and regularization.         |
+| ML Model | Observation about Model Performance |
+| --- | --- |
+| **Logistic Regression** | Served as a baseline; however, it struggled significantly with class imbalance, yielding the lowest **MCC (0.28)** and **Recall (0.19)** among all models. |
+| **Decision Tree** | Captured non-linear patterns effectively with high **Accuracy (0.98)**, but the gap between Accuracy and MCC (0.88) suggests some sensitivity to the minority class. |
+| **KNN** | Demonstrated moderate performance (**Accuracy: 0.92**); however, its lower **Recall (0.44)** indicates it missed over half of the potential positive leads. |
+| **Naive Bayes** | While computationally efficient, it delivered the lowest **Accuracy (0.83)** and **AUC (0.80)**, likely due to the strong independence assumptions between features. |
+| **Random Forest (Ensemble)** | **Top Performer.** Achieved a perfect balance across all metrics with the highest **MCC (0.92)** and **F1-Score (0.93)**, showing superior generalization through bagging. |
+| **XGBoost (Ensemble)** | Strong overall performance (**Accuracy: 0.95**, **AUC: 0.97**) due to gradient boosting; however, it was slightly outperformed by Random Forest in Precision and Recall. |
 
 ---
 
 ## 4. Screenshots
 ![alt text](image.png)
+
+* Streamlit app screenshot 
+![Alt text](image-1.png)
 
 ## 4. Final Submission Checklist
 
