@@ -79,6 +79,9 @@ The following machine learning models were implemented and evaluated:
 
 ---
 
+## 4. Screenshots
+![alt text](image.png)
+
 ## 4. Final Submission Checklist
 
 * [x] GitHub repository contains `app.py`, `requirements.txt`, and saved models.
