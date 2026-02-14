@@ -80,7 +80,7 @@ The following machine learning models were implemented and evaluated:
 ---
 
 ## 4. Screenshots
-![alt text](image.png)
+![alt text](image-2.png)
 
 * Streamlit app screenshot 
 ![Alt text](image-1.png)
