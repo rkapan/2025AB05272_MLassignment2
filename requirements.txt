@@ -1,8 +1,9 @@
-xgboost
-scikit-learn
+streamlit>=1.30.0
 pandas
 numpy
 matplotlib
 seaborn
-streamlit>=1.22.0
+joblib
+scikit-learn==1.6.1
 altair<5
+xgboost
