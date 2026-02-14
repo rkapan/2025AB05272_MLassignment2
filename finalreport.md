@@ -15,7 +15,7 @@
 
 
  
-**Live Streamlit App Link:** [Paste Clickable Link Here] 
+**Live Streamlit App Link:** https://2025ab05272bitsmlassignment.streamlit.app 
 
 
 
@@ -90,7 +90,7 @@ The following machine learning models were implemented and evaluated:
 * [x] GitHub repository contains `app.py`, `requirements.txt`, and saved models.
 
 
-* [] Live Streamlit app is deployed and interactive.
+* [x] Live Streamlit app is deployed and interactive.
 
 
 * [x] App includes CSV upload for test data.
