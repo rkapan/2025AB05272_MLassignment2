@@ -11,7 +11,7 @@
 ## 1. Mandatory Submission Links
 
 
-**GitHub Repository Link:** [Paste Clickable Link Here] 
+**GitHub Repository Link:** https://github.com/rkapan/2025AB05272_MLassignment2.git
 
 
  

@@ -12,6 +12,7 @@ import seaborn as sns
 
 st.set_page_config(layout="wide") 
 st.title("2025AB05272 ML Model Evaluation App")
+
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("Select Models to Evaluate")
@@ -40,7 +41,7 @@ if uploaded_file is not None and model_names:
         st.error(f"Error reading CSV: {e}")
         st.stop() # Stops execution if file is bad
 
-    st.write("Test data columns:", test_df.columns.tolist())
+    #st.write("Test data columns:", test_df.columns.tolist())
 
     metrics_list = []
     confusion_matrices = {}
@@ -98,7 +99,7 @@ if uploaded_file is not None and model_names:
         st.markdown(f"## Details per Model")
         model_cm_items = list(confusion_matrices.items())
         n_models = len(model_cm_items)
-        cols = min(3, n_models) if n_models > 0 else 1
+        cols = 2
         rows = math.ceil(n_models / cols) if cols > 0 else 1
 
         grid = [st.columns(cols) for _ in range(rows)]
@@ -118,18 +119,22 @@ if uploaded_file is not None and model_names:
                                 <h3 style="margin: 0; color: gray;">{model_name}</h3>
                             </div>
                         """, unsafe_allow_html=True)
+                        plt.clf()  # Clear the current figure to avoid overlap
+                        fig, ax = plt.subplots(figsize=(6, 5))
+                        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax, 
+                                    xticklabels=["Pred 0", "Pred 1"], yticklabels=["True 0", "True 1"],cbar=False)
+                        ax.set_title(f"Confusion Matrix - {model_name}")
+                        plt.tight_layout()
+                        st.pyplot(fig,use_container_width=True)
+                        plt.close(fig)
+                        
                         st.markdown(f"""
                             <div style="border-bottom: 2px solid gray; width: fit-content; margin-bottom: 10px;">
                                 <h4 style="color: gray; margin: 0; padding-bottom: 5px;">Confusion Matrix</h4>
                             </div>
                         """, unsafe_allow_html=True)
                         st.write(pd.DataFrame(cm, columns=["Pred 0", "Pred 1"], index=["True 0", "True 1"]))
-                        fig, ax = plt.subplots()
-                        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax, 
-                                    xticklabels=["Pred 0", "Pred 1"], yticklabels=["True 0", "True 1"])
-                        ax.set_title(f"Confusion Matrix - {model_name}")
-                        st.pyplot(fig)
-
+                        
                         st.markdown(f"""
                             <div style="border-bottom: 2px solid gray; width: fit-content; margin-bottom: 10px;">
                                 <h4 style="color: gray; margin: 0; padding-bottom: 5px;">Classification Report</h4>
@@ -145,7 +150,28 @@ if uploaded_file is not None and model_names:
             if last_row >= 0 and col < len(grid[last_row]):
                 with grid[last_row][col]:
                     st.write("")
+        # for idx, (model_name, cm) in enumerate(model_cm_items):
+        #     row = idx // cols
+        #     col = idx % cols
+        #     if row < len(grid) and col < len(grid[row]):
+        #         with grid[row][col]:
+        #             with st.container(border=True, height=850):
+        #                 st.markdown(f"{model_name}")
+        #                 plt.clf()  # Clear the current figure to avoid overlap
+        #                 fig, ax = plt.subplots(figsize=(6, 5))
+        #                 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax, 
+        #                             xticklabels=["Pred 0", "Pred 1"], yticklabels=["True 0", "True 1"],cbar=False)
+        #                 ax.set_title(f"Confusion Matrix - {model_name}")
+        #                 plt.tight_layout()
+        #                 st.pyplot(fig,use_container_width=True)
+        #                 plt.close(fig)
 
+        # # Optionally, fill remaining cells in the last row to keep the grid neat
+        # last_row = len(grid) - 1
+        # for col in range(len(model_cm_items) % cols, cols):
+        #     if last_row >= 0 and col < len(grid[last_row]):
+        #         with grid[last_row][col]:
+        #             st.write("")
         # Show classification reports
         # st.subheader("Classification Reports")
         # for model_name in model_names:
